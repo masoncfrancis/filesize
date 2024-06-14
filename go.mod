@@ -1,3 +1,3 @@
-module github.com/masoncfrancis/size
+module github.com/masoncfrancis/filesize
 
 go 1.22.4
