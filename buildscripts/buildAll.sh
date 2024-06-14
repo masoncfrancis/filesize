@@ -15,10 +15,10 @@ if [ -z "$1" ]; then
 fi
 
 # Project and version details
-PROGRAM_NAME="limitr"
+PROGRAM_NAME="size"
 VERSION="$1"
 OUTPUT_DIR="./out"
-SOURCE_DIR="./cmd/limitr"
+SOURCE_DIR="./cmd/size"
 
 # List of OS and Architecture combinations
 platforms=(
@@ -39,7 +39,7 @@ platforms=(
 
 platforms_string=$(printf "\n - %s" "${platforms[@]}")
 
-gum confirm "We will now build Limitr executables for the following platforms:$platforms_string" --affirmative="Continue" --negative="Exit" || { echo "Limitr build cancelled"; exit 1; }
+gum confirm "We will now build size executables for the following platforms:$platforms_string" --affirmative="Continue" --negative="Exit" || { echo "Limitr build cancelled"; exit 1; }
 
 # Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
