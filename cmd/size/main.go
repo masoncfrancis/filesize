@@ -8,12 +8,13 @@ import (
 )
 
 func main() {
-	// Define the -l flag
+	// Define the -l and -L flags
 	listFlag := flag.Bool("l", false, "list sizes of files within the first level of the directory")
+	listAllFlag := flag.Bool("L", false, "list sizes of all subdirectories and their contents")
 	flag.Parse()
 
 	if flag.NArg() < 1 {
-		fmt.Println("Usage: go run main.go [-l] <file_or_directory>")
+		fmt.Println("Usage: go run main.go [-l] [-L] <file_or_directory>")
 		return
 	}
 
@@ -25,7 +26,9 @@ func main() {
 	}
 
 	if fileInfo.IsDir() {
-		if *listFlag {
+		if *listAllFlag {
+			listAllDirSizes(path)
+		} else if *listFlag {
 			listDirSizes(path)
 		} else {
 			dirSize, err := getDirSize(path)
@@ -83,6 +86,25 @@ func listDirSizes(path string) {
 		fmt.Printf("%s: %s\n", filepath.Join(path, fileInfo.Name()), formatSize(size))
 	}
 	fmt.Printf("The total size of the directory %s is %s\n", path, formatSize(totalSize))
+}
+
+func listAllDirSizes(path string) {
+	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			dirSize, err := getDirSize(path)
+			if err != nil {
+				return err
+			}
+			fmt.Printf("%s: %s\n", path, formatSize(dirSize))
+		}
+		return nil
+	})
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
 }
 
 func formatSize(size int64) string {
