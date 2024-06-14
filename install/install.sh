@@ -4,41 +4,31 @@
 OS=$(uname -s)
 ARCH=$(uname -m)
 
-# Define the GitHub repository and API URL
-REPO="masoncfrancis/size"
-API_URL="https://api.github.com/repos/$REPO/releases/latest"
-
-# Fetch the latest release information
-echo "Fetching the latest release information..."
-LATEST_RELEASE=$(curl -s $API_URL)
-
-# Extract the tag name and construct the base URL
-TAG_NAME=$(echo $LATEST_RELEASE | grep -oP '"tag_name": "\K(.*)(?=")')
-BASE_URL="https://github.com/$REPO/releases/download/$TAG_NAME"
-
-# Determine the file to download based on OS and architecture
+# Define the download URL and the file name
+BASE_URL="https://github.com/masoncfrancis/filesize/releases/download/0.1.0"
 FILE_NAME=""
 
+# Determine the file to download based on OS and architecture
 case "$OS" in
     "Linux")
         case "$ARCH" in
             "x86_64")
-                FILE_NAME="size_linux_amd64_$TAG_NAME"
+                FILE_NAME="filesize_linux_amd64_v0.1.0"
                 ;;
             "arm64")
-                FILE_NAME="size_linux_arm64_$TAG_NAME"
+                FILE_NAME="filesize_linux_arm64_v0.1.0"
                 ;;
             "armv5")
-                FILE_NAME="size_linux_armv5_$TAG_NAME"
+                FILE_NAME="filesize_linux_armv5_v0.1.0"
                 ;;
             "armv6")
-                FILE_NAME="size_linux_armv6_$TAG_NAME"
+                FILE_NAME="filesize_linux_armv6_v0.1.0"
                 ;;
             "armv7")
-                FILE_NAME="size_linux_armv7_$TAG_NAME"
+                FILE_NAME="filesize_linux_armv7_v0.1.0"
                 ;;
             "i386")
-                FILE_NAME="size_linux_386_$TAG_NAME"
+                FILE_NAME="filesize_linux_386_v0.1.0"
                 ;;
             *)
                 echo "Unsupported Linux architecture: $ARCH"
@@ -49,10 +39,10 @@ case "$OS" in
     "Darwin")
         case "$ARCH" in
             "x86_64")
-                FILE_NAME="size_darwin_amd64_$TAG_NAME"
+                FILE_NAME="filesize_darwin_amd64_v0.1.0"
                 ;;
             "arm64")
-                FILE_NAME="size_darwin_arm64_$TAG_NAME"
+                FILE_NAME="filesize_darwin_arm64_v0.1.0"
                 ;;
             *)
                 echo "Unsupported macOS architecture: $ARCH"
@@ -63,13 +53,13 @@ case "$OS" in
     "FreeBSD")
         case "$ARCH" in
             "x86_64")
-                FILE_NAME="size_freebsd_amd64_$TAG_NAME"
+                FILE_NAME="filesize_freebsd_amd64_v0.1.0"
                 ;;
             "arm")
-                FILE_NAME="size_freebsd_arm_$TAG_NAME"
+                FILE_NAME="filesize_freebsd_arm_v0.1.0"
                 ;;
             "i386")
-                FILE_NAME="size_freebsd_386_$TAG_NAME"
+                FILE_NAME="filesize_freebsd_386_v0.1.0"
                 ;;
             *)
                 echo "Unsupported FreeBSD architecture: $ARCH"
@@ -94,11 +84,11 @@ curl -L -o /tmp/$FILE_NAME $DOWNLOAD_URL
 chmod +x /tmp/$FILE_NAME
 
 # Move the file to a directory in the PATH
-sudo mv /tmp/$FILE_NAME /usr/local/bin/size
+sudo mv /tmp/$FILE_NAME /usr/local/bin/filesize
 
 # Verify installation
-if command -v size &> /dev/null; then
-    echo "Installation successful. 'size' is now available."
+if command -v filesize &> /dev/null; then
+    echo "Installation successful. 'filesize' is now available."
 else
     echo "Installation failed."
 fi
