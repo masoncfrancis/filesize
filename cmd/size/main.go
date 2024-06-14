@@ -23,7 +23,7 @@ func main() {
 	}
 
 	if flag.NArg() < 1 {
-		fmt.Println("Usage: go run main.go [-l] [-L] [-v] <file_or_directory>")
+		fmt.Println("Usage: size [-l] [-L] [-v] <file_or_directory>")
 		return
 	}
 
