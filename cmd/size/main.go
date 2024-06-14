@@ -7,14 +7,23 @@ import (
 	"path/filepath"
 )
 
+// Version of the program
+const version = "0.1.0"
+
 func main() {
-	// Define the -l and -L flags
+	// Define the -l, -L, and -v flags
 	listFlag := flag.Bool("l", false, "list sizes of files within the first level of the directory")
 	listAllFlag := flag.Bool("L", false, "list sizes of all subdirectories and their contents")
+	versionFlag := flag.Bool("v", false, "display the version of the program")
 	flag.Parse()
 
+	if *versionFlag {
+		fmt.Println("Version:", version)
+		return
+	}
+
 	if flag.NArg() < 1 {
-		fmt.Println("Usage: go run main.go [-l] [-L] <file_or_directory>")
+		fmt.Println("Usage: go run main.go [-l] [-L] [-v] <file_or_directory>")
 		return
 	}
 
