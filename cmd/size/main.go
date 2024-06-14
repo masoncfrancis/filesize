@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 // Version of the program
-const version = "0.1.0"
+const version = "1.0.0"
 
 func main() {
 	// Define the -l, -L, and -v flags
@@ -27,7 +28,7 @@ func main() {
 		return
 	}
 
-	path := flag.Arg(0)
+	path := normalizePath(flag.Arg(0))
 	fileInfo, err := os.Stat(path)
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -50,6 +51,10 @@ func main() {
 	} else {
 		fmt.Printf("The size of the file %s is %s\n", path, formatSize(fileInfo.Size()))
 	}
+}
+
+func normalizePath(path string) string {
+	return strings.TrimRight(path, `\/`)
 }
 
 func getDirSize(path string) (int64, error) {
