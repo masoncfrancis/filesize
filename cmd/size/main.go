@@ -87,10 +87,10 @@ func listDirSizes(path string) {
 
 func formatSize(size int64) string {
 	const (
-		KB = 1 << (10 * iota)
-		MB
-		GB
-		TB
+		KB = 1024
+		MB = KB * 1024
+		GB = MB * 1024
+		TB = GB * 1024
 	)
 
 	switch {
