@@ -9,7 +9,7 @@ import (
 )
 
 // Version of the program
-const version = "1.0.0"
+const version = "0.1.0"
 
 func main() {
 	// Define the -l, -L, and -v flags
