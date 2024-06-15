@@ -24,7 +24,7 @@ func main() {
 	}
 
 	if flag.NArg() < 1 {
-		fmt.Println("Usage: size [-l] [-L] [-v] <file_or_directory>")
+		fmt.Println("Usage: filesize [-l] [-L] [-v] <file_or_directory>")
 		return
 	}
 
