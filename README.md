@@ -18,7 +18,7 @@ If you get an error saying that the directory doesn't exist, you can create it w
 and try to run `filesize` and it says it can't be found, you might need to add that directory to your PATH variable. Look up how to do that if you're not sure.
 
 
-If you are using Windows, you'll need to download the executable for your operating system on the Releases page. If you want it to always be accessible via the
+If you are using **Windows**, you'll need to download the executable for your operating system on the Releases page. If you want it to always be accessible via the
 command line or PowerShell, make sure to put it somewhere in your PATH variable (or add the directory it's in to your PATH variable). Look up how to do that 
 if you're not sure. 
 
