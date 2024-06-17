@@ -9,10 +9,10 @@ A command-line utility to get the size of a file or directory, written in Go
 Run the following command to install on UNIX-like operating systems:
 
 ```
-curl -s https://installerfork-dbb5iadsuq-uc.a.run.app/!?type=script | sudo bash
+curl -s https://installfilesize.masonfrancis.net/! | sudo bash
 ```
 
-Looks like a sketchy URL, I know. It's the install script generator I'm hosting on Google Cloud. If you want to read through the install script before you run it, you can visit [https://installerfork-dbb5iadsuq-uc.a.run.app?type=script](https://installerfork-dbb5iadsuq-uc.a.run.app?type=script).
+You're right to be wary of running random bash scripts on your system, so if you want to read through the install script before you run it, you can see it at [https://installfilesize.masonfrancis.net/?type=script](https://installfilesize.masonfrancis.net/?type=script).
 
 
 If you are using Windows, you'll need to download the executable for your operating system on the Releases page. 
