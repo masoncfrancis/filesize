@@ -31,7 +31,7 @@ filesize [flag] <file or directory>
 #### Flags
 
 - `-l`: List sizes of files within the first level of the directory
-- `-L`: List sizes of all subdirectories and their contents
+- `-L`: List sizes of all subdirectories
 - `-h`: Show detailed usage information
 - `-v`: Show the version of the program
 
