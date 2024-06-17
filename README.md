@@ -6,6 +6,8 @@ A command-line utility to get the size of a file or directory, written in Go
 
 ### Installation/Updating
 
+#### UNIX-like Operating Systems
+
 Run the following command to install or update an existing installation on UNIX-like operating systems:
 
 ```
@@ -17,10 +19,11 @@ Basically the script checks what OS and architecture you're using, downloads the
 If you get an error saying that the directory doesn't exist, you can create it with `sudo mkdir -p [the directory path]`. If you do that, install successfully, 
 and try to run `filesize` and it says it can't be found, you might need to add that directory to your PATH variable. Look up how to do that if you're not sure.
 
+#### Windows
 
-If you are using **Windows**, you'll need to download the executable for your operating system on the Releases page. If you want it to always be accessible via the
-command line or PowerShell, make sure to put it somewhere in your PATH variable (or add the directory it's in to your PATH variable). Look up how to do that 
-if you're not sure. 
+If you are using Windows, you'll need to download the executable for your operating system on the [Releases page](https://github.com/masoncfrancis/filesize/releases). 
+If you want it to always be accessible via the command line or PowerShell, make sure to put it somewhere in your PATH variable (or add the directory it's 
+in to your PATH variable). Look up how to do that if you're not sure. 
 
 ### Usage
 
