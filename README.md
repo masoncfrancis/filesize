@@ -12,7 +12,7 @@ Run the following command to install or update an existing installation on UNIX-
 curl -s https://filesize.i.masonfrancis.net/! | sudo bash
 ```
 
-You're right to be wary of running random bash scripts on your system, so if you want to read through the install script before you run it, you can see it at [https://filesize.i.masonfrancis.net/?type=script](https://filesize.i.masonfrancis.net/?type=script). It's not very long. 
+You're right to be wary of running random bash scripts on your system, so if you want to read through the install script before you run it, you can see it at [https://filesize.i.masonfrancis.net/!?type=script](https://filesize.i.masonfrancis.net/!?type=script). It's not very long. 
 Basically the script checks what OS and architecture you're using, downloads the appropriate binary, and installs it to `/usr/local/bin`.
 
 
